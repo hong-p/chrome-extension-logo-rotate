@@ -16,7 +16,9 @@ chrome.tabs.onActivated.addListener(tab =>{
 // 화면이 refresh 될때 감지하는 리스너 
 chrome.tabs.onUpdated.addListener(
     function(tabId,changeInfo,tab){
-        if (/^http/.test(tab.url) && changeInfo.url === undefined){
+        console.log('changeInfo')
+        console.log(changeInfo)
+        if (/^http/.test(tab.url) && changeInfo.status === 'complete'){
             chrome.tabs.insertCSS(null, {file : './style.css'});
             chrome.tabs.executeScript(null, {file: "./foreground.js"}, ()=>{
             console.log('Injected!!');
