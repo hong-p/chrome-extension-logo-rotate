@@ -47,5 +47,3 @@ if(daumLogoId !== null){
         daumLogoId.classList.remove('spin');
     })
 }
-
-

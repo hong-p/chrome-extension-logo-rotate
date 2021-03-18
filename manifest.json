@@ -11,9 +11,17 @@
     },
     "permissions": [
         "tabs",
+        "*://*/*",
         "http://*/*",
-        "https://*/*",
-        "https://www.google.com/",
-        "https://www.google.co.kr/"
+        "https://*/*"
+    ],
+    "content_scripts":[
+      {
+        "matches":[
+          "http://*.naver.com/*",
+          "https://*.naver.com/*"
+        ],
+        "js" : ["contentScript.js"]
+      }
     ]
   }
